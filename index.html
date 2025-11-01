@@ -1,55 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Shaik Saleem — Backend Engineer</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saleem Shaik | Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.png">
 </head>
 <body>
-<header class="hero">
-<div class="container">
-<img class="avatar" src="https://avatars.githubusercontent.com/saleem-shaik-git?s=200" alt="Shaik Saleem"/>
-<h1>Shaik Saleem</h1>
-<p class="tagline">Backend Engineer • Java &amp; Spring Boot Specialist</p>
-<p class="bio">I build scalable microservices and cloud-native backends using Java, Spring Boot, and modern DevOps practices.</p>
-<div class="links">
-<a class="btn" href="https://github.com/saleem-shaik-git" target="_blank">GitHub</a>
-<a class="btn" href="https://www.linkedin.com/in/saleem-shaik-66b9a16a" target="_blank">LinkedIn</a>
-<a class="btn outline" href="mailto:shaik.saleem@outlook.com">Email</a>
-</div>
-</div>
-</header>
+  <header>
+    <div class="container">
+      <img src="assets/profile.jpg" alt="Saleem Shaik" class="profile-pic">
+      <h1>👋 Hi, I'm <span>Saleem Shaik</span></h1>
+      <p>Software Developer • Cloud Engineer • Data Enthusiast</p>
+      <div class="socials">
+        <a href="mailto:shaik.saleem@outlook.com" target="_blank">Email</a>
+        <a href="https://www.linkedin.com/in/saleem-shaik-66b9a16a" target="_blank">LinkedIn</a>
+        <a href="https://github.com/saleem-shaik-git" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </header>
 
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a passionate developer who enjoys crafting reliable software systems, building cloud-native applications, and exploring data-driven solutions. 
+      My work spans from backend automation to full-stack web development — always focusing on performance and scalability.
+    </p>
+  </section>
 
-<main class="container main">
-<section id="about" class="card">
-<h2>About</h2>
-<p>Java • Spring Boot • Microservices • Docker • Kubernetes • REST • Cloud</p>
-<p>Experienced in designing API-first microservices, event-driven systems, and deploying production-ready services on cloud platforms.</p>
-</section>
+  <section id="projects">
+    <h2>🚀 Featured Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Data Pipeline Automation</h3>
+        <p>Automated ETL workflow using Airflow and AWS Lambda for seamless data ingestion.</p>
+        <span>Python • AWS • Airflow</span>
+        <a href="https://github.com/saleem-shaik-git/data-pipeline" target="_blank">View Project</a>
+      </div>
+      <div class="card">
+        <h3>Containerized API Boilerplate</h3>
+        <p>Flask API scaffold with CI/CD integration, Docker setup, and testing workflows.</p>
+        <span>Flask • Docker • GitHub Actions</span>
+        <a href="https://github.com/saleem-shaik-git/docker-api-template" target="_blank">View Project</a>
+      </div>
+      <div class="card">
+        <h3>ML Insights Dashboard</h3>
+        <p>Interactive web dashboard for predictive analytics and model visualization.</p>
+        <span>scikit-learn • Plotly • FastAPI</span>
+        <a href="https://github.com/saleem-shaik-git/ml-insights" target="_blank">View Project</a>
+      </div>
+      <div class="card">
+        <h3>Cloud Cost Optimizer</h3>
+        <p>Cloud resource monitoring and cost optimization tool for AWS and Azure users.</p>
+        <span>Python • Boto3 • Azure SDK</span>
+        <a href="https://github.com/saleem-shaik-git/cloud-cost-optimizer" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
 
+  <section id="skills">
+    <h2>🧰 Tech Toolbox</h2>
+    <div class="skills">
+      <span>Python</span><span>Flask</span><span>FastAPI</span>
+      <span>AWS</span><span>Docker</span><span>Kubernetes</span>
+      <span>Terraform</span><span>React</span><span>PostgreSQL</span>
+    </div>
+  </section>
 
-<section id="projects" class="card">
-<h2>Featured Repositories</h2>
-<div id="repo-list" class="repo-list">Loading repositories…</div>
-<p class="muted">Repos are pulled live from the GitHub API (public repos). If you have many repos, pagination is supported client-side.</p>
-</section>
+  <section id="stats">
+    <h2>📊 GitHub Stats</h2>
+    <div class="stats-container">
+      <img src="https://github-readme-stats.vercel.app/api?username=saleem-shaik-git&show_icons=true&theme=react" alt="GitHub Stats">
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=saleem-shaik-git&layout=compact&theme=react" alt="Top Languages">
+    </div>
+  </section>
 
-
-<section id="contact" class="card">
-<h2>Contact</h2>
-<p>If you'd like to collaborate or reach out — <a href="mailto:shaik.saleem@outlook.com">shaik.saleem@outlook.com</a>.</p>
-</section>
-</main>
-
-
-<footer class="footer">
-<p>© <span id="year"></span> Shaik Saleem — Built with ❤️ • <a href="https://github.com/saleem-shaik-git">GitHub</a></p>
-</footer>
-
-
-<script src="script.js"></script>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <footer>
+    <p>© 2025 Saleem Shaik | Built with ❤️ for the Open Source Community</p>
+  </footer>
 </body>
 </html>
