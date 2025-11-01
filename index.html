@@ -1,16 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Shaik Saleem — Portfolio</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Shaik Saleem — Backend Engineer</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to my portfoio</h1>
-  <p>I build Java / Spring Boot microservices.</p>
-  <ul>
-    <li><a href="https://github.com/saleem-shaik-git/user-service-springboot">User Service</a></li>
-    <li><a href="https://github.com/saleem-shaik-git/order-management-api">Order API</a></li>
-    <!-- and so on… -->
-  </ul>
+<header class="hero">
+<div class="container">
+<img class="avatar" src="https://avatars.githubusercontent.com/saleem-shaik-git?s=200" alt="Shaik Saleem"/>
+<h1>Shaik Saleem</h1>
+<p class="tagline">Backend Engineer • Java &amp; Spring Boot Specialist</p>
+<p class="bio">I build scalable microservices and cloud-native backends using Java, Spring Boot, and modern DevOps practices.</p>
+<div class="links">
+<a class="btn" href="https://github.com/saleem-shaik-git" target="_blank">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/saleem-shaik-66b9a16a" target="_blank">LinkedIn</a>
+<a class="btn outline" href="mailto:shaik.saleem@outlook.com">Email</a>
+</div>
+</div>
+</header>
+
+
+<main class="container main">
+<section id="about" class="card">
+<h2>About</h2>
+<p>Java • Spring Boot • Microservices • Docker • Kubernetes • REST • Cloud</p>
+<p>Experienced in designing API-first microservices, event-driven systems, and deploying production-ready services on cloud platforms.</p>
+</section>
+
+
+<section id="projects" class="card">
+<h2>Featured Repositories</h2>
+<div id="repo-list" class="repo-list">Loading repositories…</div>
+<p class="muted">Repos are pulled live from the GitHub API (public repos). If you have many repos, pagination is supported client-side.</p>
+</section>
+
+
+<section id="contact" class="card">
+<h2>Contact</h2>
+<p>If you'd like to collaborate or reach out — <a href="mailto:shaik.saleem@outlook.com">shaik.saleem@outlook.com</a>.</p>
+</section>
+</main>
+
+
+<footer class="footer">
+<p>© <span id="year"></span> Shaik Saleem — Built with ❤️ • <a href="https://github.com/saleem-shaik-git">GitHub</a></p>
+</footer>
+
+
+<script src="script.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
