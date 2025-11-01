@@ -1,53 +1,63 @@
-const GITHUB_USER = 'saleem-shaik-git';
-const PER_PAGE = 100; // adjust if you want fewer
+// Typing animation
+const roles = ["Software Developer", "Cloud Engineer", "Data Enthusiast"];
+let roleIndex = 0, charIndex = 0, currentRole = "", typingElement = document.getElementById("typing");
 
-
-async function fetchRepos(page = 1, acc = []){
-const url = `https://api.github.com/users/${GITHUB_USER}/repos?per_page=${PER_PAGE}&page=${page}&sort=updated`;
-const res = await fetch(url);
-if(!res.ok) throw new Error('GitHub API error: ' + res.status);
-const data = await res.json();
-if(data.length === 0) return acc;
-return fetchRepos(page + 1, acc.concat(data));
+function typeEffect() {
+  if (charIndex < roles[roleIndex].length) {
+    currentRole += roles[roleIndex].charAt(charIndex);
+    typingElement.textContent = currentRole;
+    charIndex++;
+    setTimeout(typeEffect, 100);
+  } else {
+    setTimeout(eraseEffect, 1500);
+  }
 }
 
-
-function renderRepos(repos){
-const container = document.getElementById('repo-list');
-container.innerHTML = '';
-// Filter and show featured repos first (optional)
-const featured = ['user-service-springboot','order-management-api','inventory-microservice','api-gateway-springcloud'];
-// sort: featured, then by updated
-repos.sort((a,b)=> new Date(b.updated_at)-new Date(a.updated_at));
-const sorted = repos.sort((a,b)=> (featured.includes(b.name)?1:0) - (featured.includes(a.name)?1:0));
-
-
-sorted.forEach(r=>{
-const d = document.createElement('div');
-d.className = 'repo';
-d.innerHTML = `
-<div style="display:flex;justify-content:space-between;align-items:center">
-<h3><a href="${r.html_url}" target="_blank">${r.name}</a></h3>
-<div class="stargazers">⭐ ${r.stargazers_count}</div>
-</div>
-<p>${r.description || ''}</p>
-<div class="meta">
-<div>${r.language || ''}</div>
-<div>${r.forks_count} forks</div>
-<div>Updated ${new Date(r.updated_at).toLocaleDateString()}</div>
-</div>
-`;
-container.appendChild(d);
-})
+function eraseEffect() {
+  if (charIndex > 0) {
+    currentRole = roles[roleIndex].substring(0, charIndex - 1);
+    typingElement.textContent = currentRole;
+    charIndex--;
+    setTimeout(eraseEffect, 50);
+  } else {
+    roleIndex = (roleIndex + 1) % roles.length;
+    setTimeout(typeEffect, 500);
+  }
 }
+typeEffect();
 
+// Dark/light theme toggle
+const toggle = document.getElementById("theme-toggle");
+const storedTheme = localStorage.getItem("theme");
+if (storedTheme) document.documentElement.setAttribute("data-theme", storedTheme);
 
-(async function(){
-try{
-const repos = await fetchRepos();
-renderRepos(repos.slice(0, 24)); // show top 24
-}catch(e){
-document.getElementById('repo-list').textContent = 'Could not load repositories. API rate limit may have been reached.';
-console.error(e);
-}
-})();
+toggle.addEventListener("click", () => {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", newTheme);
+  localStorage.setItem("theme", newTheme);
+  toggle.textContent = newTheme === "light" ? "🌞" : "🌙";
+});
+
+// Fetch GitHub repositories dynamically
+const username = "saleem-shaik-git";
+const repoGrid = document.getElementById("repo-grid");
+
+fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
+  .then(response => response.json())
+  .then(repos => {
+    repoGrid.innerHTML = "";
+    repos.slice(0, 8).forEach(repo => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <h3>${repo.name}</h3>
+        <p>${repo.description || "No description available."}</p>
+        <a href="${repo.html_url}" target="_blank">🔗 View Repository</a>
+      `;
+      repoGrid.appendChild(card);
+    });
+  })
+  .catch(() => {
+    repoGrid.innerHTML = "<p>Failed to load repositories.</p>";
+  });

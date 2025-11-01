@@ -1,37 +1,60 @@
+:root {
+  --bg: #0d1117;
+  --text: #e6edf3;
+  --accent: #58a6ff;
+  --card-bg: #161b22;
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --text: #1f2328;
+  --accent: #0078ff;
+  --card-bg: #f6f8fa;
+}
+
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   margin: 0;
-  background-color: #0d1117;
-  color: #e6edf3;
+  background-color: var(--bg);
+  color: var(--text);
   text-align: center;
+  transition: background 0.4s, color 0.4s;
+}
+
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--accent);
 }
 
 header {
   padding: 3rem 1rem;
-  background: linear-gradient(180deg, #161b22, #0d1117);
+  background: linear-gradient(180deg, var(--card-bg), var(--bg));
+  position: relative;
 }
 
 .profile-pic {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border: 3px solid #0078ff;
+  border: 3px solid var(--accent);
   margin-bottom: 1rem;
 }
 
 h1 span {
-  color: #0078ff;
+  color: var(--accent);
 }
 
-.socials a {
-  margin: 0 10px;
-  color: #58a6ff;
-  text-decoration: none;
+#typing {
+  font-size: 1.2rem;
   font-weight: 600;
-}
-
-.socials a:hover {
-  text-decoration: underline;
+  margin-top: 0.5rem;
+  min-height: 28px;
 }
 
 section {
@@ -41,7 +64,7 @@ section {
 }
 
 h2 {
-  color: #58a6ff;
+  color: var(--accent);
   border-bottom: 2px solid #30363d;
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
@@ -54,7 +77,7 @@ h2 {
 }
 
 .card {
-  background: #161b22;
+  background: var(--card-bg);
   padding: 1.5rem;
   border-radius: 10px;
   transition: transform 0.3s;
@@ -62,26 +85,12 @@ h2 {
 
 .card:hover {
   transform: scale(1.05);
-  border: 1px solid #0078ff;
-}
-
-.card span {
-  display: block;
-  font-size: 0.9rem;
-  color: #8b949e;
-  margin-top: 0.5rem;
-}
-
-.card a {
-  display: inline-block;
-  margin-top: 1rem;
-  color: #58a6ff;
-  text-decoration: none;
+  border: 1px solid var(--accent);
 }
 
 .skills span {
   display: inline-block;
-  background: #21262d;
+  background: var(--card-bg);
   margin: 5px;
   padding: 8px 12px;
   border-radius: 20px;
@@ -96,7 +105,7 @@ h2 {
 footer {
   margin-top: 2rem;
   padding: 1rem;
-  background: #161b22;
+  background: var(--card-bg);
   color: #8b949e;
   font-size: 0.9rem;
 }

@@ -10,9 +10,10 @@
 <body>
   <header>
     <div class="container">
+      <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
       <img src="assets/profile.jpg" alt="Saleem Shaik" class="profile-pic">
       <h1>👋 Hi, I'm <span>Saleem Shaik</span></h1>
-      <p>Software Developer • Cloud Engineer • Data Enthusiast</p>
+      <h2 id="typing"></h2>
       <div class="socials">
         <a href="mailto:shaik.saleem@outlook.com" target="_blank">Email</a>
         <a href="https://www.linkedin.com/in/saleem-shaik-66b9a16a" target="_blank">LinkedIn</a>
@@ -24,47 +25,22 @@
   <section id="about">
     <h2>About Me</h2>
     <p>
-      I'm a passionate developer who enjoys crafting reliable software systems, building cloud-native applications, and exploring data-driven solutions. 
-      My work spans from backend automation to full-stack web development — always focusing on performance and scalability.
+      I'm a passionate developer crafting Java-based microservices with Spring Boot, 
+      building cloud-native systems, and leveraging data insights to drive efficiency.
     </p>
   </section>
 
   <section id="projects">
     <h2>🚀 Featured Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Data Pipeline Automation</h3>
-        <p>Automated ETL workflow using Airflow and AWS Lambda for seamless data ingestion.</p>
-        <span>Python • AWS • Airflow</span>
-        <a href="https://github.com/saleem-shaik-git/data-pipeline" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <h3>Containerized API Boilerplate</h3>
-        <p>Flask API scaffold with CI/CD integration, Docker setup, and testing workflows.</p>
-        <span>Flask • Docker • GitHub Actions</span>
-        <a href="https://github.com/saleem-shaik-git/docker-api-template" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <h3>ML Insights Dashboard</h3>
-        <p>Interactive web dashboard for predictive analytics and model visualization.</p>
-        <span>scikit-learn • Plotly • FastAPI</span>
-        <a href="https://github.com/saleem-shaik-git/ml-insights" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <h3>Cloud Cost Optimizer</h3>
-        <p>Cloud resource monitoring and cost optimization tool for AWS and Azure users.</p>
-        <span>Python • Boto3 • Azure SDK</span>
-        <a href="https://github.com/saleem-shaik-git/cloud-cost-optimizer" target="_blank">View Project</a>
-      </div>
-    </div>
+    <div class="grid" id="repo-grid">Loading repositories...</div>
   </section>
 
   <section id="skills">
     <h2>🧰 Tech Toolbox</h2>
     <div class="skills">
-      <span>Python</span><span>Flask</span><span>FastAPI</span>
+      <span>Java</span><span>Spring Boot</span><span>Microservices</span>
       <span>AWS</span><span>Docker</span><span>Kubernetes</span>
-      <span>Terraform</span><span>React</span><span>PostgreSQL</span>
+      <span>MongoDB</span><span>PostgreSQL</span><span>CI/CD</span>
     </div>
   </section>
 
@@ -79,5 +55,7 @@
   <footer>
     <p>© 2025 Saleem Shaik | Built with ❤️ for the Open Source Community</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
